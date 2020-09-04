@@ -1528,7 +1528,7 @@ $(function () {
 
   if ($('.project-period__slider').exists()) {
     try {
-      var _projecPeriod = new Swiper('.project-period__slider', {
+      var projecPeriod = new Swiper('.project-period__slider', {
         slidesPerView: '1',
         spaceBetween: 40,
         effect: 'fade',
@@ -1551,29 +1551,29 @@ $(function () {
           prevEl: '.inner-slider__link--prev'
         }
       });
+
+      if ($('.project-period__unit').exists()) {
+        $('.project-period__unit').each(function () {
+          var dataVal = 0;
+          var dataSlide = 0;
+          $(this).on('click', function () {
+            $('.project-period__text').text($(this).text());
+            $('.project-period__box').removeClass('project-period__box--active');
+            dataVal = $(this).find('input').data('period');
+            $('.project-period__slider .swiper-slide').each(function () {
+              dataSlide = $(this).data('slide');
+
+              if (dataSlide == dataVal) {
+                projecPeriod.slideTo(dataSlide - 1);
+                return false;
+              }
+            });
+          });
+        });
+      }
     } catch (err) {
       console.log(err);
     }
-  }
-
-  if ($('.project-period__unit').exists()) {
-    $('.project-period__unit').each(function () {
-      var dataVal = 0;
-      var dataSlide = 0;
-      $(this).on('click', function () {
-        $('.project-period__text').text($(this).text());
-        $('.project-period__box').removeClass('project-period__box--active');
-        dataVal = $(this).find('input').data('period');
-        $('.project-period__slider .swiper-slide').each(function () {
-          dataSlide = $(this).data('slide');
-
-          if (dataSlide == dataVal) {
-            projecPeriod.slideTo(dataSlide - 1);
-            return false;
-          }
-        });
-      });
-    });
   }
 
   $(document).click(function (e) {
