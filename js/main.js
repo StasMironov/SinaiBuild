@@ -30,10 +30,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             spaceBetween: 10,
             touchRatio: 1
           },
+          600: {
+            autoplay: {
+              delay: 1000
+            }
+          },
           320: {
             slidesPerView: 1,
             spaceBetween: 10,
-            touchRatio: 1
+            touchRatio: 1,
+            autoplay: {
+              delay: 1000
+            }
           }
         }
       });
