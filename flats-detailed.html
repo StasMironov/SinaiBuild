@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="css/main.css"><script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+<script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+<!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="b-page">
+      <header class="header">
+        <div class="header__container b-container">
+          <div class="header__wrapper"><a class="logo" href="javascript:void(0);">
+              <div class="logo__img"><svg width="102" height="48" viewBox="0 0 102 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M34.0234 38H26.7969V21.6719H26.6406L20.293 37.668H15.8594L9.51172 21.6719H9.35547V38H2.12891V9.81641H11.6992L18.0078 26.2617H18.1641L24.4531 9.81641H34.0234V38ZM79.0039 18.4297C77.4023 18.5339 76.1198 19.0612 75.1562 20.0117C74.1667 20.9883 73.6719 22.2839 73.6719 23.8984C73.6719 25.513 74.1667 26.8151 75.1562 27.8047C76.1198 28.7552 77.4023 29.2826 79.0039 29.3867V18.4297ZM92.1875 23.918C92.1875 22.3034 91.6927 21.0013 90.7031 20.0117C89.7396 19.0612 88.457 18.5339 86.8555 18.4297V29.3867C88.457 29.2826 89.7396 28.7552 90.7031 27.8047C91.6927 26.8281 92.1875 25.5326 92.1875 23.918ZM78.8672 35.7148C74.7656 35.5586 71.5104 34.4714 69.1016 32.4531C66.6146 30.3568 65.3711 27.5052 65.3711 23.8984C65.3711 20.3177 66.6211 17.4727 69.1211 15.3633C71.5299 13.3451 74.7786 12.2578 78.8672 12.1016V9.03516H86.9922V12.1016C91.0938 12.2578 94.349 13.3451 96.7578 15.3633C99.2448 17.4596 100.488 20.3112 100.488 23.918C100.488 27.4987 99.2383 30.3438 96.7383 32.4531C94.3294 34.4714 91.0807 35.5586 86.9922 35.7148V38.7812H78.8672V35.7148Z" fill="#1E202C"/>
+<path d="M62.9883 28.7031C62.9883 31.5286 62.0247 33.7878 60.0977 35.4805C58.1836 37.1602 55.651 38 52.5 38H39.6289V9.81641H60.6055V16.3789H47.9102V19.7578H52.1289C55.3841 19.7578 58.0013 20.5651 59.9805 22.1797C61.9857 23.8203 62.9883 25.9948 62.9883 28.7031ZM50.4883 31.75C51.7643 31.75 52.7539 31.4896 53.457 30.9688C54.1862 30.4479 54.5508 29.6862 54.5508 28.6836C54.5508 26.6263 53.1771 25.5977 50.4297 25.5977H47.9102V31.75H50.4883Z" fill="#D8BB54"/>
+</svg>
+              </div>
+              <div class="logo__bloc">
+                <div class="logo__txt">От идеи </div>
+                <div class="logo__txt">до эксплуатации</div>
+              </div></a>
+            <div class="header__nav">
+              <div class="header__item header__item--menu">
+                <div class="header__link">
+                  <div>О компании</div><i> 
+                          <svg class="b-svg svg-arr_list ">
+                            <use xlink:href="svg/symbol/sprite.svg#arr_list"></use>
+                          </svg></i>
+                </div>
+                <div class="header__sub">
+                  <div class="header__box"><a class="header__ref header__ref--act" href="javascript:void(0);">Ссылка 1 не помню какая</a><a class="header__ref" href="javascript:void(0);">Ссылка 2</a><a class="header__ref" href="javascript:void(0);">Ссылка 3</a></div>
+                </div>
+              </div>
+              <div class="header__item">
+                <div class="header__link header__link--active"><a href="javascript:void(0);">Проекты</a></div>
+              </div>
+              <div class="header__item">
+                <div class="header__link"><a href="javascript:void(0);">Ход строительства</a></div>
+              </div>
+              <div class="header__item">
+                <div class="header__link"><a href="javascript:void(0);">Вторичное жилье</a></div>
+              </div>
+              <div class="header__item">
+                <div class="header__link"><a href="javascript:void(0);">Земельные участки</a></div>
+              </div>
+            </div>
+            <div class="header__phone">
+              <div class="header__link"><a class="b-header__tel" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a></div>
+            </div>
+            <div class="burger"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="overlay">
+          <div class="menu">
+            <div class="menu__inner">
+              <div class="menu__top"><a class="menu__logo" href="javascript:void(0);">
+                  <div class="logo__img logo__img--menu"><svg width="102" height="48" viewBox="0 0 102 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M34.0234 38H26.7969V21.6719H26.6406L20.293 37.668H15.8594L9.51172 21.6719H9.35547V38H2.12891V9.81641H11.6992L18.0078 26.2617H18.1641L24.4531 9.81641H34.0234V38ZM79.0039 18.4297C77.4023 18.5339 76.1198 19.0612 75.1562 20.0117C74.1667 20.9883 73.6719 22.2839 73.6719 23.8984C73.6719 25.513 74.1667 26.8151 75.1562 27.8047C76.1198 28.7552 77.4023 29.2826 79.0039 29.3867V18.4297ZM92.1875 23.918C92.1875 22.3034 91.6927 21.0013 90.7031 20.0117C89.7396 19.0612 88.457 18.5339 86.8555 18.4297V29.3867C88.457 29.2826 89.7396 28.7552 90.7031 27.8047C91.6927 26.8281 92.1875 25.5326 92.1875 23.918ZM78.8672 35.7148C74.7656 35.5586 71.5104 34.4714 69.1016 32.4531C66.6146 30.3568 65.3711 27.5052 65.3711 23.8984C65.3711 20.3177 66.6211 17.4727 69.1211 15.3633C71.5299 13.3451 74.7786 12.2578 78.8672 12.1016V9.03516H86.9922V12.1016C91.0938 12.2578 94.349 13.3451 96.7578 15.3633C99.2448 17.4596 100.488 20.3112 100.488 23.918C100.488 27.4987 99.2383 30.3438 96.7383 32.4531C94.3294 34.4714 91.0807 35.5586 86.9922 35.7148V38.7812H78.8672V35.7148Z" fill="#1E202C"/>
+<path d="M62.9883 28.7031C62.9883 31.5286 62.0247 33.7878 60.0977 35.4805C58.1836 37.1602 55.651 38 52.5 38H39.6289V9.81641H60.6055V16.3789H47.9102V19.7578H52.1289C55.3841 19.7578 58.0013 20.5651 59.9805 22.1797C61.9857 23.8203 62.9883 25.9948 62.9883 28.7031ZM50.4883 31.75C51.7643 31.75 52.7539 31.4896 53.457 30.9688C54.1862 30.4479 54.5508 29.6862 54.5508 28.6836C54.5508 26.6263 53.1771 25.5977 50.4297 25.5977H47.9102V31.75H50.4883Z" fill="#D8BB54"/>
+</svg>
+                  </div>
+                  <div class="menu__txt">От идеи до эксплуатации</div></a>
+                <div class="menu__close"></div>
+              </div>
+              <div class="menu__list">
+                <div class="menu__item menu__item--menu">
+                  <div class="menu__link">
+                    <div>О компании</div><i> 
+                            <svg class="b-svg svg-arr_list ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr_list"></use>
+                            </svg></i>
+                  </div>
+                  <div class="menu__sub"><a class="menu__ref menu__ref--active" href="javascript:void(0);">Ссылка 2</a><a class="menu__ref" href="javascript:void(0);">Ссылка 3</a></div>
+                </div>
+                <div class="menu__item">
+                  <div class="menu__link menu__link--active"><a href="javascript:void(0);">Проекты</a></div>
+                </div>
+                <div class="menu__item">
+                  <div class="header__link"><a href="javascript:void(0);">Ход строительства</a></div>
+                </div>
+                <div class="menu__item">
+                  <div class="menu__link"><a href="javascript:void(0);">Вторичное жилье</a></div>
+                </div>
+                <div class="menu__item">
+                  <div class="menu__link"><a href="javascript:void(0);">Земельные участк</a></div>
+                </div>
+                <div class="menu__item menu__item--phone">
+                  <div class="menu__link"><a class="b-header__tel" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a></div>
+                </div>
+              </div>
+              <div class="share-bloc share-bloc--header">
+                <div class="share-bloc__items"><a class="share-bloc__item" href="javascript:void(0);">
+                          <svg class="b-svg svg-vk ">
+                            <use xlink:href="svg/symbol/sprite.svg#vk"></use>
+                          </svg></a><a class="share-bloc__item" href="javascript:void(0);">
+                          <svg class="b-svg svg-inst ">
+                            <use xlink:href="svg/symbol/sprite.svg#inst"></use>
+                          </svg></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="flats-detailed mf-margin">
+        <div class="flats-detailed__container b-container">
+          <div class="flats-detailed__title title-1">2к квартира на Завенягина 1/2</div>
+          <div class="flats-detailed__wrapper">
+            <div class="flats-detailed__left">
+              <div class="slider-flats">
+                <div class="slider-flats__wrapp swiper-wrapper">
+                  <div class="slider-flats__box swiper-slide">
+                    <div class="slider-flats__left"><img src="./img/flats/plan/plan.svg" alt=""></div>
+                    <div class="slider-flats__right">
+                      <div class="slider-flats__ic" style="background-image: url(./img/flats/plan/weather.svg)"></div>
+                    </div>
+                  </div>
+                  <div class="slider-flats__box swiper-slide">
+                    <div class="slider-flats__left"><img src="./img/flats/plan/plan.svg" alt=""></div>
+                    <div class="slider-flats__right">
+                      <div class="slider-flats__ic" style="background-image: url(./img/flats/plan/weather.svg)"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider-flats__cover">
+                  <div class="slider-flats__text">Этажи</div>
+                  <div class="slider-flats__arrow">
+                    <div class="slider-flats__arrow--prev">
+                            <svg class="b-svg svg-arr_flats ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr_flats"></use>
+                            </svg>
+                    </div>
+                    <div class="slider-flats__pagination"></div>
+                    <div class="slider-flats__arrow--next">
+                            <svg class="b-svg svg-arr_flats ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr_flats"></use>
+                            </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flats-detailed__right">
+              <div class="flats-info">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="flats-info__top">
+                      <div class="flats-info__items">
+                        <div class="flats-info__item">
+                          <div class="flats-info__txt">Адрес:</div>
+                          <div class="flats-info__txt">Завенягина 1/2</div>
+                        </div>
+                        <div class="flats-info__item">
+                          <div class="flats-info__txt">Срок сдачи:</div>
+                          <div class="flats-info__txt">1 квартал 2021 </div>
+                        </div>
+                        <div class="flats-info__item">
+                          <div class="flats-info__txt">Этаж:</div>
+                          <div class="flats-info__txt">4 из 10</div>
+                        </div>
+                        <div class="flats-info__item">
+                          <div class="flats-info__txt">Пощадь:</div>
+                          <div class="flats-info__txt">23,0 м</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flats-info__content">
+                      <div class="flats-info__blocs">
+                        <div class="flats-info__bloc">
+                          <div class="flats-info__ic" style="background-image: url(./img/flats/plan/benefit1.svg)"></div>
+                          <div class="flats-info__txt">Гардероб в спальне</div>
+                        </div>
+                        <div class="flats-info__bloc">
+                          <div class="flats-info__ic" style="background-image: url(./img/flats/plan/benefit2.svg)"></div>
+                          <div class="flats-info__txt">Второй санузел</div>
+                        </div>
+                        <div class="flats-info__bloc">
+                          <div class="flats-info__ic" style="background-image: url(./img/flats/plan/benefit3.svg)"></div>
+                          <div class="flats-info__txt">Вид на 2 стороны</div>
+                        </div>
+                        <div class="flats-info__bloc">
+                          <div class="flats-info__ic" style="background-image: url(./img/flats/plan/benefit4.svg)"></div>
+                          <div class="flats-info__txt">Постирочная</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flats-info__price">
+                      <div class="flats-info__unit">
+                        <div class="flats-info__num">1 250 000 руб.</div>
+                        <div class="flats-info__word">купить в ипотеку от 9 400 руб/мес.</div>
+                      </div><a class="link link--underline" href="javascript:void(0);">Купите квартиру в ипотеку без первоначального взноса</a>
+                    </div>
+                    <div class="flats-info__func"><a class="flats-info__module" href="javascript:void(0);">
+                        <div class="flats-info__pic"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M28.3333 36.6667C23.7317 36.6667 20 32.935 20 28.3333C20 23.7317 23.7317 20 28.3333 20C32.9367 20 36.6667 23.7317 36.6667 28.3333C36.6667 32.935 32.9367 36.6667 28.3333 36.6667" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28.3333 25V31.6667" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25 28.3333L28.3333 31.6666L31.6667 28.3333" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M31.6667 20.695V13.0467C31.6667 12.1633 31.315 11.315 30.69 10.69L25.9767 5.97667C25.3517 5.35167 24.5033 5 23.62 5H8.33333C6.49167 5 5 6.49167 5 8.33333V31.6667C5 33.5083 6.49167 35 8.33333 35H23.3333" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M31.6663 13.3333H24.9997C24.0797 13.3333 23.333 12.5867 23.333 11.6667V5" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                        </div>
+                        <div class="flats-info__char">Скачать PDF</div></a><a class="flats-info__module" href="javascript:void(0);">
+                        <div class="flats-info__pic"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.4099 18.0354C17.4949 19.1204 17.4949 20.8796 16.4099 21.9646C15.3249 23.0496 13.5657 23.0496 12.4807 21.9646C11.3957 20.8796 11.3957 19.1204 12.4807 18.0354C13.5658 16.9504 15.3249 16.9504 16.4099 18.0354" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.917 21.2334L23.0837 24.3167" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23.0837 15.6833L16.917 18.7667" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.5193 12.4805C28.6043 13.5655 28.6043 15.3247 27.5193 16.4097C26.4343 17.4947 24.6751 17.4947 23.5901 16.4097C22.5051 15.3246 22.5051 13.5655 23.5901 12.4805C24.6751 11.3955 26.4343 11.3955 27.5193 12.4805" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.5193 23.5904C28.6043 24.6754 28.6043 26.4345 27.5193 27.5195C26.4343 28.6045 24.6751 28.6045 23.5901 27.5195C22.5051 26.4345 22.5051 24.6754 23.5901 23.5904C24.6751 22.5054 26.4343 22.5054 27.5193 23.5904" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31.6667 35H8.33333C6.49167 35 5 33.5083 5 31.6667V8.33333C5 6.49167 6.49167 5 8.33333 5H31.6667C33.5083 5 35 6.49167 35 8.33333V31.6667C35 33.5083 33.5083 35 31.6667 35Z" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                        </div>
+                        <div class="flats-info__char">Поделиться</div></a></div><a class="btn btn--decor" href="">
+                      <div class="btn__cover">
+                        <div class="btn__button">
+                          <div class="btn__line">
+                                  <svg class="b-svg svg-arr ">
+                                    <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                                  </svg>
+                          </div>
+                          <div class="btn__figure">
+                                  <svg class="b-svg svg-figure ">
+                                    <use xlink:href="svg/symbol/sprite.svg#figure"></use>
+                                  </svg>
+                            <div class="btn__decor">
+                                    <svg class="b-svg svg-arr ">
+                                      <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                                    </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="btn__button btn__button--laptop">
+                           <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.8284 10.6855C21.3905 12.2476 21.3905 14.7803 19.8284 16.3423C18.2663 17.9044 15.7337 17.9044 14.1716 16.3423C12.6095 14.7802 12.6095 12.2476 14.1716 10.6855C15.7337 9.12339 18.2663 9.12339 19.8284 10.6855" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 12.1799V14.8499" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.3299 13.51H15.6699" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.507 16.6361C12.887 17.8101 11.513 18.5141 11.453 18.5141C11.303 18.5141 3 14.1841 3 8.89608C3 6.28508 5.001 3.48608 7.978 3.48608C9.687 3.48608 10.805 4.34108 11.453 5.09208C12.101 4.34108 13.219 3.48608 14.928 3.48608C17.905 3.48608 19.906 6.28508 19.906 8.89608C19.906 9.44608 19.799 9.98208 19.637 10.5071" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                        </div>
+                      </div>
+                      <div class="btn__txt">забронировать квартиру</div></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flats-special">
+        <div class="flats-special__container b-container">
+          <div class="flats-special__grid">
+            <div class="flats-special__left">
+              <div class="flats-special__title title-3">Рекомендуем квартиры</div>
+              <div class="flats-special__bloc">
+                <div class="flats-special__txt">с дополнительными функциями</div>
+                <div class="flats-special__txt">с Увеличив ипотечный платёж вы можете купить квартиру большей площади с дополнительными функциями, такими как например терраса, гардеробная, постирочная.</div>
+              </div>
+              <div class="index-project__wrapper button">
+                <div class="inner-slider__in">
+                  <div class="index-project__link index-project__link--pf_prev"></div>
+                  <div class="index-project__link index-project__link--pf_next"></div>
+                </div>
+              </div>
+            </div>
+            <div class="flats-special__right">
+              <div class="flats-special__inner" id="plan-slider">
+                <div class="flats-special__wrapper swiper-wrapper"><a class="flats-special__slide swiper-slide" href="javascript:void(0);">
+                    <div class="flats-special__pic"><img src="./img/flats/plan/plan.svg" alt=""></div>
+                    <div class="flats-special__content">
+                      <div class="flats-special__block"> 
+                        <div class="flats-special__area">+16,4м <sup>2</sup></div>
+                        <div class="flats-special__text">к площади</div>
+                      </div>
+                      <div class="flats-special__tags">
+                        <div class="flats-special__tag">Гардероб в спальне</div>
+                        <div class="flats-special__tag">Второй санузел</div>
+                        <div class="flats-special__tag">Ещё 4</div>
+                      </div>
+                      <div class="flats-special__pay">
+                        <div class="flats-special__word">Ипотечный платеж</div>
+                        <div class="flats-special__price"><span>+6 200</span> р/мес.</div>
+                      </div>
+                    </div></a><a class="flats-special__slide swiper-slide" href="javascript:void(0);">
+                    <div class="flats-special__pic"><img src="./img/flats/plan/plan.svg" alt=""></div>
+                    <div class="flats-special__content">
+                      <div class="flats-special__block"> 
+                        <div class="flats-special__area">+16,4м <sup>2</sup></div>
+                        <div class="flats-special__text">к площади</div>
+                      </div>
+                      <div class="flats-special__tags">
+                        <div class="flats-special__tag">Гардероб в спальне</div>
+                        <div class="flats-special__tag">Второй санузел</div>
+                        <div class="flats-special__tag">Ещё 4</div>
+                      </div>
+                      <div class="flats-special__pay">
+                        <div class="flats-special__word">Ипотечный платеж</div>
+                        <div class="flats-special__price"><span>+6 200</span> р/мес.</div>
+                      </div>
+                    </div></a><a class="flats-special__slide swiper-slide" href="javascript:void(0);">
+                    <div class="flats-special__pic"><img src="./img/flats/plan/plan.svg" alt=""></div>
+                    <div class="flats-special__content">
+                      <div class="flats-special__block"> 
+                        <div class="flats-special__area">+16,4м <sup>2</sup></div>
+                        <div class="flats-special__text">к площади</div>
+                      </div>
+                      <div class="flats-special__tags">
+                        <div class="flats-special__tag">Гардероб в спальне</div>
+                        <div class="flats-special__tag">Второй санузел</div>
+                        <div class="flats-special__tag">Ещё 4</div>
+                      </div>
+                      <div class="flats-special__pay">
+                        <div class="flats-special__word">Ипотечный платеж</div>
+                        <div class="flats-special__price"><span>+6 200</span> р/мес.</div>
+                      </div>
+                    </div></a><a class="flats-special__slide swiper-slide" href="javascript:void(0);">
+                    <div class="flats-special__pic"><img src="./img/flats/plan/plan.svg" alt=""></div>
+                    <div class="flats-special__content">
+                      <div class="flats-special__block"> 
+                        <div class="flats-special__area">+16,4м <sup>2</sup></div>
+                        <div class="flats-special__text">к площади</div>
+                      </div>
+                      <div class="flats-special__tags">
+                        <div class="flats-special__tag">Гардероб в спальне</div>
+                        <div class="flats-special__tag">Второй санузел</div>
+                        <div class="flats-special__tag">Ещё 4</div>
+                      </div>
+                      <div class="flats-special__pay">
+                        <div class="flats-special__word">Ипотечный платеж</div>
+                        <div class="flats-special__price"><span>+6 200</span> р/мес.</div>
+                      </div>
+                    </div></a><a class="flats-special__slide swiper-slide" href="javascript:void(0);">
+                    <div class="flats-special__pic"><img src="./img/flats/plan/plan.svg" alt=""></div>
+                    <div class="flats-special__content">
+                      <div class="flats-special__block"> 
+                        <div class="flats-special__area">+16,4м <sup>2</sup></div>
+                        <div class="flats-special__text">к площади</div>
+                      </div>
+                      <div class="flats-special__tags">
+                        <div class="flats-special__tag">Гардероб в спальне</div>
+                        <div class="flats-special__tag">Второй санузел</div>
+                        <div class="flats-special__tag">Ещё 4</div>
+                      </div>
+                      <div class="flats-special__pay">
+                        <div class="flats-special__word">Ипотечный платеж</div>
+                        <div class="flats-special__price"><span>+6 200</span> р/мес.</div>
+                      </div>
+                    </div></a></div>
+                <div class="project-period__pagination"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flats-calc">
+            <div class="flats-calc__grid">
+              <div class="flats-calc__left">
+                <div class="flats-calc__title title-2">Рассчет ипотеки</div>
+                <div class="flats-calc__wrapper">
+                  <div class="flats-calc__row">
+                    <div class="flats-calc__article">Стоимость квартиры</div>
+                    <div class="flats-calc__box">
+                      <div class="flats-calc__item">
+                        <input class="flats-calc__input" type="number" placeholder="2 350 000" id="flat-price">
+                      </div>
+                      <div class="flats-calc__item">
+                        <div class="flats-calc__bloc">
+                          <div class="flats-calc__block" data-min="1500000" data-max="13500000">
+                            <div class="building-filter__up">2 190 000</div>
+                            <div class="building-filter__low">32 000 000</div>
+                          </div>
+                          <div class="flats-calc__range" id="price"></div><input type="hidden" name="send-price" id="send-result-price">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flats-calc__row">
+                    <div class="flats-calc__article">Первый взнос</div>
+                    <div class="flats-calc__box">
+                      <div class="flats-calc__item">
+                        <input class="flats-calc__input" type="number" placeholder="475 000" id="flats-donat">
+                      </div>
+                      <div class="flats-calc__item">
+                        <div class="flats-calc__bloc">
+                          <div class="flats-calc__block" data-min="235000" data-max="2115000">
+                            <div class="building-filter__up">2 190 000</div>
+                            <div class="building-filter__low">32 000 000</div>
+                          </div>
+                          <div class="flats-calc__range" id="donat"></div><input type="hidden" name="send-donat" id="send-result-donat">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flats-calc__row">
+                    <div class="flats-calc__article">Срок кредита</div>
+                    <div class="flats-calc__box">
+                      <div class="flats-calc__item">
+                        <input class="flats-calc__input" type="text" placeholder="30" id="flats-period">
+                      </div>
+                      <div class="flats-calc__item">
+                        <div class="flats-calc__bloc">
+                          <div class="flats-calc__block" data-min="1" data-max="30">
+                            <div class="building-filter__up">1</div>
+                            <div class="building-filter__low">30</div>
+                          </div>
+                          <div class="flats-calc__range" id="period"></div><input type="hidden" name="send-period" id="send-result-period">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flats-calc__row flats-calc__row--savings">
+                    <div class="flats-calc__article">Сумма материнского капитала</div>
+                    <div class="flats-calc__box">
+                      <div class="flats-calc__item">
+                        <input class="flats-calc__input" type="text" placeholder="30" id="flats-savings">
+                      </div>
+                      <div class="flats-calc__item">
+                        <div class="flats-calc__bloc">
+                          <div class="flats-calc__block" data-min="0" data-max="616617">
+                            <div class="building-filter__up">0</div>
+                            <div class="building-filter__low">616 617</div>
+                          </div>
+                          <div class="flats-calc__range" id="savings"></div><input type="hidden" name="send-savings" id="send-result-savings">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" id="calc-rezult">
+                </div>
+                <div class="flats-calc__special">
+                  <div class="flats-calc__check"><input id="select2" type="checkbox" name="select2" value="savings" data-name="savings">
+<label for="select2" >Есть материнский капитал</label>
+                  </div>
+                </div>
+                <div class="flats-calc__about">
+                  <div class="flats-calc__unit"><a class="btn btn--decor" href="">
+                      <div class="btn__cover">
+                        <div class="btn__button">
+                          <div class="btn__line">
+                                  <svg class="b-svg svg-arr ">
+                                    <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                                  </svg>
+                          </div>
+                          <div class="btn__figure">
+                                  <svg class="b-svg svg-figure ">
+                                    <use xlink:href="svg/symbol/sprite.svg#figure"></use>
+                                  </svg>
+                            <div class="btn__decor">
+                                    <svg class="b-svg svg-arr ">
+                                      <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                                    </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="btn__button btn__button--laptop">
+                           <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                        </div>
+                      </div>
+                      <div class="btn__txt">заказать консультацию</div></a></div>
+                  <div class="flats-calc__unit"> <a class="link link--underline" href="javascript:void(0);">Об ипотеке</a></div>
+                </div>
+              </div>
+              <div class="flats-calc__right">
+                <div class="flats-card">
+                  <div class="flats-card__items"><a class="flats-card__item" href="javascript:void(0);">
+                      <div class="flats-card__logo" style="background-image: url('./img/banks/b1.png')"></div>
+                      <div class="flats-card__info">
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ставка</div>
+                          <div class="flats-card__val">от 8,10%</div>
+                        </div>
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ежемесячный платеж</div>
+                          <div class="flats-card__val flats-card__val--month">14 600 руб/мес</div>
+                        </div>
+                      </div>
+                      <div class="flats-card__promo">Сумма ипотеки от 6 млн.</div></a><a class="flats-card__item" href="javascript:void(0);">
+                      <div class="flats-card__logo" style="background-image: url('./img/banks/b1.png')"></div>
+                      <div class="flats-card__info">
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ставка</div>
+                          <div class="flats-card__val">от 8,10%</div>
+                        </div>
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ежемесячный платеж</div>
+                          <div class="flats-card__val flats-card__val--month">14 600 руб/мес</div>
+                        </div>
+                      </div>
+                      <div class="flats-card__promo">Сумма ипотеки от 6 млн.</div></a><a class="flats-card__item" href="javascript:void(0);">
+                      <div class="flats-card__logo" style="background-image: url('./img/banks/b1.png')"></div>
+                      <div class="flats-card__info">
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ставка</div>
+                          <div class="flats-card__val">от 8,10%</div>
+                        </div>
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ежемесячный платеж</div>
+                          <div class="flats-card__val flats-card__val--month">14 600 руб/мес</div>
+                        </div>
+                      </div>
+                      <div class="flats-card__promo">Сумма ипотеки от 6 млн.</div></a><a class="flats-card__item" href="javascript:void(0);">
+                      <div class="flats-card__logo" style="background-image: url('./img/banks/b1.png')"></div>
+                      <div class="flats-card__info">
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ставка</div>
+                          <div class="flats-card__val">от 8,10%</div>
+                        </div>
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ежемесячный платеж</div>
+                          <div class="flats-card__val flats-card__val--month">14 600 руб/мес</div>
+                        </div>
+                      </div>
+                      <div class="flats-card__promo">Сумма ипотеки от 6 млн.</div></a><a class="flats-card__item" href="javascript:void(0);">
+                      <div class="flats-card__logo" style="background-image: url('./img/banks/b1.png')"></div>
+                      <div class="flats-card__info">
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ставка</div>
+                          <div class="flats-card__val">от 8,10%</div>
+                        </div>
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ежемесячный платеж</div>
+                          <div class="flats-card__val flats-card__val--month">14 600 руб/мес</div>
+                        </div>
+                      </div>
+                      <div class="flats-card__promo">Сумма ипотеки от 6 млн.</div></a><a class="flats-card__item" href="javascript:void(0);">
+                      <div class="flats-card__logo" style="background-image: url('./img/banks/b1.png')"></div>
+                      <div class="flats-card__info">
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ставка</div>
+                          <div class="flats-card__val">от 8,10%</div>
+                        </div>
+                        <div class="flats-card__bloc">
+                          <div class="flats-card__title">Ежемесячный платеж</div>
+                          <div class="flats-card__val flats-card__val--month">14 600 руб/мес</div>
+                        </div>
+                      </div>
+                      <div class="flats-card__promo">Сумма ипотеки от 6 млн.</div></a></div>
+                </div>
+              </div>
+              <div class="flats-calc__about flats-calc__about--hidden">
+                <div class="flats-calc__unit"><a class="btn btn--decor" href="">
+                    <div class="btn__cover">
+                      <div class="btn__button">
+                        <div class="btn__line">
+                                <svg class="b-svg svg-arr ">
+                                  <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                                </svg>
+                        </div>
+                        <div class="btn__figure">
+                                <svg class="b-svg svg-figure ">
+                                  <use xlink:href="svg/symbol/sprite.svg#figure"></use>
+                                </svg>
+                          <div class="btn__decor">
+                                  <svg class="b-svg svg-arr ">
+                                    <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                                  </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="btn__button btn__button--laptop"> 
+                              <svg class="b-svg svg-phone ">
+                                <use xlink:href="svg/symbol/sprite.svg#phone"></use>
+                              </svg>
+                      </div>
+                    </div>
+                    <div class="btn__txt">заказать консультацию</div></a></div>
+                <div class="flats-calc__unit"> <a class="link link--underline" href="javascript:void(0);">Об ипотеке</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-container">
+        <div class="wrapper wrapper--basic">
+          <div class="wrapper__left">
+            <div class="menu-content">
+              <div class="menu-content__inner"><a class="menu-content__li menu-content__li--active" href="#about">О проекте</a><a class="menu-content__li" href="#flat">Квартира</a></div>
+            </div>
+          </div>
+          <div class="wrapper__right">
+            <div class="project">
+              <div class="project__start" id="about"></div>
+              <div class="content content--project">
+                <h1>Test</h1>
+                <h2>Test 2</h2>
+                <h3>Test 3</h3><a class="project__img" href="./img/card/pic.jpg"><img src="./img/card/pic.jpg" alt=""></a><a class="project__img" href="./img/card/pic.jpg"><img src="./img/card/pic.jpg" alt=""></a>
+                <p>Для удобства жильцов каждый подъезд оборудован 2 лифтами - пассажирским и грузовым, большая входная группа позволяет свободно разместить в коридоре велосипеды и коляски. В нашем доме нет мусоропровода. В нашем доме нет газового оборудования. Установка электрических плит позволяет использовать специальные тарифные планы по оплате за элетроэнергию.</p><a class="project__img" href="./img/card/pic.jpg"><img src="./img/card/pic.jpg" alt=""></a>
+                <p>Для удобства жильцов каждый подъезд оборудован 2 лифтами - пассажирским и грузовым, большая входная группа позволяет свободно разместить в коридоре велосипеды и коляски. В нашем доме нет мусоропровода. В нашем доме нет газового оборудования. Установка электрических плит позволяет использовать специальные тарифные планы по оплате за элетроэнергию.</p><a class="project__img" href="./img/card/pic3.jpg"><img src="./img/card/pic3.jpg" alt=""></a>
+                <p>Для удобства жильцов каждый подъезд оборудован 2 лифтами - пассажирским и грузовым, большая входная группа позволяет свободно разместить в коридоре велосипеды и коляски. В нашем доме нет мусоропровода. В нашем доме нет газового оборудования. Установка электрических плит позволяет использовать специальные тарифные планы по оплате за элетроэнергию.</p>
+                <ul>
+                  <li>Tet 1</li>
+                  <li>Test 2</li>
+                  <li>Test 3</li>
+                </ul>
+                <ul> 
+                  <li>Tet 1</li>
+                  <li>Test 2</li>
+                  <li>Test 3</li>
+                </ul>
+                <div> 
+                  <p>Lorem <a href="#">ipsum dolor sit amet</a> consectetur adipisicing elit. Ab nisi at repellendus, et corporis enim eius labore a explicabo. Est modi voluptate rem possimus beatae praesentium fugiat vero dignissimos commodi?</p>
+                </div>
+                <ol>
+                  <li>Tet 1</li>
+                  <li>Test 2</li>
+                  <li>Test 3</li>
+                </ol>
+              </div>
+              <div class="project-period project-period--simple" id="flat">
+                <div class="project-period__slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-slide="1"><img src="./img/card/pic4.jpg" alt=""></div>
+                    <div class="swiper-slide" data-slide="2"><img src="./img/card/pic2.jpg" alt=""></div>
+                    <div class="swiper-slide" data-slide="3"><img src="./img/card/pic3.jpg" alt=""></div>
+                  </div>
+                  <div class="inner-slider__inner">
+                    <div class="inner-slider__num"></div>
+                    <div class="inner-slider__wrapper inner-slider__wrapper--build">
+                      <div class="inner-slider__pagination button">
+                        <div class="inner-slider__in">
+                          <div class="inner-slider__link inner-slider__link--prev"></div>
+                          <div class="inner-slider__link inner-slider__link--next"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-period__pagination"></div>
+                  <div class="swiper-menu"></div>
+                </div>
+              </div>
+            </div>
+            <div style="height: 350px"></div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer"><a id="btnUp">
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.749996" y="-0.747675" width="41.9004" height="41.9004" transform="matrix(-4.37114e-08 -1 0.999995 0.00310011 1.49767 43.405)" fill="#D8BB54" stroke="#D8BB54" stroke-width="1.5"/>
+<mask id="path-2-outside-1" maskUnits="userSpaceOnUse" x="8.2002" y="9.31372" width="27" height="25" fill="black">
+<rect fill="white" x="8.2002" y="9.31372" width="27" height="25"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.6516 23.354C33.9517 23.3534 34.1946 23.1097 34.194 22.8096C34.194 22.6658 34.1369 22.5279 34.0353 22.426L22.0821 10.4728C21.8699 10.2607 21.526 10.2607 21.3138 10.4728L9.36051 22.4261C9.15717 22.6366 9.15717 22.9704 9.36051 23.181C9.569 23.3968 9.91298 23.4028 10.1288 23.1943L21.6974 11.6246L33.266 23.1943C33.3682 23.2968 33.507 23.3542 33.6516 23.354ZM33.6517 33.1337C33.9518 33.1332 34.1947 32.8895 34.1941 32.5894C34.1941 32.4451 34.1366 32.3067 34.0344 32.2047L22.0811 20.2515C21.8689 20.0394 21.525 20.0394 21.3128 20.2515L9.35954 32.2047C9.14708 32.4172 9.14708 32.7616 9.35954 32.9741C9.572 33.1866 9.91644 33.1866 10.1289 32.9741L21.6975 21.4044L33.2661 32.9741C33.3682 33.0765 33.5071 33.134 33.6517 33.1337Z"/>
+</mask>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.6516 23.354C33.9517 23.3534 34.1946 23.1097 34.194 22.8096C34.194 22.6658 34.1369 22.5279 34.0353 22.426L22.0821 10.4728C21.8699 10.2607 21.526 10.2607 21.3138 10.4728L9.36051 22.4261C9.15717 22.6366 9.15717 22.9704 9.36051 23.181C9.569 23.3968 9.91298 23.4028 10.1288 23.1943L21.6974 11.6246L33.266 23.1943C33.3682 23.2968 33.507 23.3542 33.6516 23.354ZM33.6517 33.1337C33.9518 33.1332 34.1947 32.8895 34.1941 32.5894C34.1941 32.4451 34.1366 32.3067 34.0344 32.2047L22.0811 20.2515C21.8689 20.0394 21.525 20.0394 21.3128 20.2515L9.35954 32.2047C9.14708 32.4172 9.14708 32.7616 9.35954 32.9741C9.572 33.1866 9.91644 33.1866 10.1289 32.9741L21.6975 21.4044L33.2661 32.9741C33.3682 33.0765 33.5071 33.134 33.6517 33.1337Z" fill="#1E202C"/>
+<path d="M34.194 22.8096H33.894L33.894 22.8102L34.194 22.8096ZM33.6516 23.354L33.6521 23.654L33.6522 23.654L33.6516 23.354ZM34.0353 22.426L34.2477 22.2141L34.2475 22.2139L34.0353 22.426ZM22.0821 10.4728L22.2942 10.2607L22.2942 10.2606L22.0821 10.4728ZM21.3138 10.4728L21.1017 10.2606L21.1017 10.2607L21.3138 10.4728ZM9.36051 22.4261L9.14835 22.2139L9.14473 22.2177L9.36051 22.4261ZM9.36051 23.181L9.14471 23.3894L9.14475 23.3894L9.36051 23.181ZM10.1288 23.1943L10.3373 23.4101L10.3409 23.4064L10.1288 23.1943ZM21.6974 11.6246L21.9095 11.4125L21.6974 11.2004L21.4852 11.4125L21.6974 11.6246ZM33.266 23.1943L33.4784 22.9825L33.4781 22.9822L33.266 23.1943ZM34.1941 32.5894H33.8941L33.8941 32.59L34.1941 32.5894ZM33.6517 33.1337L33.6522 33.4337L33.6523 33.4337L33.6517 33.1337ZM34.0344 32.2047L33.8222 32.4169L33.8225 32.4172L34.0344 32.2047ZM22.0811 20.2515L22.2932 20.0393L22.2932 20.0393L22.0811 20.2515ZM21.3128 20.2515L21.1007 20.0393L21.1007 20.0393L21.3128 20.2515ZM9.35954 32.2047L9.14741 31.9926L9.14741 31.9926L9.35954 32.2047ZM9.35954 32.9741L9.14741 33.1862L9.14741 33.1862L9.35954 32.9741ZM10.1289 32.9741L10.341 33.1862L10.341 33.1862L10.1289 32.9741ZM21.6975 21.4044L21.9096 21.1923L21.6975 20.9801L21.4853 21.1923L21.6975 21.4044ZM33.2661 32.9741L33.4785 32.7622L33.4782 32.762L33.2661 32.9741ZM33.894 22.8102C33.8942 22.9445 33.7855 23.0537 33.6511 23.054L33.6522 23.654C34.1179 23.6531 34.4949 23.2749 34.494 22.8091L33.894 22.8102ZM33.823 22.638C33.8685 22.6835 33.894 22.7453 33.894 22.8096H34.494C34.494 22.5863 34.4054 22.3722 34.2477 22.2141L33.823 22.638ZM21.87 10.6849L33.8232 22.6382L34.2475 22.2139L22.2942 10.2607L21.87 10.6849ZM21.5259 10.685C21.6209 10.59 21.7749 10.59 21.87 10.685L22.2942 10.2606C21.9648 9.93144 21.431 9.9314 21.1017 10.2606L21.5259 10.685ZM9.57265 22.6382L21.5259 10.6849L21.1017 10.2607L9.14838 22.214L9.57265 22.6382ZM9.57632 22.9726C9.48522 22.8782 9.48526 22.7288 9.57629 22.6345L9.14473 22.2177C8.82909 22.5445 8.82912 23.0626 9.14471 23.3894L9.57632 22.9726ZM9.92037 22.9786C9.82376 23.0719 9.6697 23.0692 9.57628 22.9725L9.14475 23.3894C9.4683 23.7243 10.0022 23.7337 10.3372 23.4101L9.92037 22.9786ZM21.4852 11.4125L9.91666 22.9822L10.3409 23.4064L21.9095 11.8368L21.4852 11.4125ZM33.4781 22.9822L21.9095 11.4125L21.4852 11.8368L33.0538 23.4064L33.4781 22.9822ZM33.6511 23.054C33.5863 23.0541 33.5241 23.0283 33.4784 22.9825L33.0536 23.4062C33.2122 23.5652 33.4276 23.6544 33.6521 23.654L33.6511 23.054ZM33.8941 32.59C33.8943 32.7243 33.7856 32.8335 33.6512 32.8337L33.6523 33.4337C34.118 33.4329 34.495 33.0547 34.4941 32.5889L33.8941 32.59ZM33.8225 32.4172C33.8684 32.4629 33.8941 32.5249 33.8941 32.5894H34.4941C34.4941 32.3653 34.4048 32.1504 34.2462 31.9923L33.8225 32.4172ZM21.869 20.4636L33.8222 32.4169L34.2465 31.9926L22.2932 20.0393L21.869 20.4636ZM21.5249 20.4636C21.6199 20.3686 21.774 20.3686 21.869 20.4636L22.2932 20.0393C21.9639 19.7101 21.43 19.7101 21.1007 20.0393L21.5249 20.4636ZM9.57167 32.4169L21.525 20.4636L21.1007 20.0393L9.14741 31.9926L9.57167 32.4169ZM9.57167 32.762C9.47637 32.6667 9.47637 32.5122 9.57167 32.4169L9.14741 31.9926C8.81779 32.3222 8.81779 32.8566 9.14741 33.1862L9.57167 32.762ZM9.91676 32.762C9.82146 32.8573 9.66697 32.8573 9.57167 32.762L9.14741 33.1862C9.47702 33.5159 10.0114 33.5159 10.341 33.1862L9.91676 32.762ZM21.4853 21.1923L9.91675 32.762L10.341 33.1862L21.9096 21.6165L21.4853 21.1923ZM33.4782 32.762L21.9096 21.1923L21.4853 21.6165L33.0539 33.1862L33.4782 32.762ZM33.6512 32.8337C33.5864 32.8339 33.5242 32.8081 33.4785 32.7622L33.0537 33.186C33.2123 33.3449 33.4277 33.4341 33.6522 33.4337L33.6512 32.8337Z" fill="#1E202C" mask="url(#path-2-outside-1)"/>
+</svg>
+</a>
+        <div class="footer__container b-container">
+          <div class="footer__top">
+            <div class="footer__data">
+              <div class="footer__info">
+                <div class="footer__bloc footer__bloc--logo"><a class="footer__logo" href="javascript:void(0);"><img src="./img/logo-footer.png" alt=""></a></div>
+                <div class="footer__bloc"> 
+                  <div class="share-bloc share-bloc--footer">
+                    <div class="share-bloc__items"><a class="share-bloc__soc" href="javascript:void(0);">
+                        <div class="share-bloc__item">
+                                <svg class="b-svg svg-vk ">
+                                  <use xlink:href="svg/symbol/sprite.svg#vk"></use>
+                                </svg>
+                        </div>
+                        <div class="share-bloc__txt">VKontakte</div></a><a class="share-bloc__soc" href="javascript:void(0);">
+                        <div class="share-bloc__item">
+                                <svg class="b-svg svg-inst ">
+                                  <use xlink:href="svg/symbol/sprite.svg#inst"></use>
+                                </svg>
+                        </div>
+                        <div class="share-bloc__txt">Instagram</div></a></div>
+                  </div>
+                </div>
+              </div><a class="footer__phone" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00 — Юридическая информация</a>
+            </div>
+            <div class="footer__box">
+              <div class="footer__items">
+                <div class="footer__unit"><a class="footer__link footer__link--active" href="javascript:void(0);">Контакты</a><a class="footer__link" href="javascript:void(0);">Компания</a></div>
+                <div class="footer__unit"><a class="footer__link" href="javascript:void(0);">Ипотека</a><a class="footer__link" href="javascript:void(0);">Обмен</a></div>
+                <div class="footer__unit"><a class="footer__link" href="javascript:void(0);">Новости</a><a class="footer__link" href="javascript:void(0);">Способы оплаты</a></div>
+                <div class="footer__unit"><a class="footer__link" href="javascript:void(0);">Проекты</a><a class="footer__link" href="javascript:void(0);">Земельные участки</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom"><a class="footer__ref" href="javascript:void(0);">Синай-Групп (с). 2020</a><a class="footer__ref footer__ref--phone" href="javascript:void(0);">+7 (900) 000-00-00 — Юридическая информация</a><a class="footer__ref" href="javascript:void(0);">Пользовательское соглашение</a><a class="footer__ref" href="javascript:void(0);"> Разработано Uralmedias</a></div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/libs-min.js"></script>
+    <script src="js/main-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Clamp.js/0.5.1/clamp.min.js"></script>
+    <script src="js/wNumb.min.js"></script>
+  </body>
+</html>

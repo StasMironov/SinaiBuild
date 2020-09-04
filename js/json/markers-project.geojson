@@ -1,0 +1,149 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [58.985550, 53.377120]
+		},
+		"properties": {
+			"title": "Магазин",
+			"icon": {
+				"iconUrl": "../img/icon/marker/shop.png",
+				"iconSize": [50, 50],
+				"iconAnchor": [25, 25], 
+				"popupAnchor": [0, -25], 
+				"className": "marker"
+			},
+			"name": "products"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [58.988547, 53.376635]
+		},
+		"properties": {
+			"title": "Школа",
+			"icon": {
+				"iconUrl": "../img/icon/marker/school.png",
+				"iconSize": [50, 50], 
+				"iconAnchor": [25, 25],
+				"popupAnchor": [0, -25],
+				"className": "marker"
+			},
+			"name": "school"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [58.987873, 53.376404]
+		},
+		"properties": {
+			"title": "Школа",
+			"icon": {
+				"iconUrl": "../img/icon/marker/school.png",
+				"iconSize": [50, 50], 
+				"iconAnchor": [25, 25],
+				"popupAnchor": [0, -25],
+				"className": "marker"
+			},
+			"name": "school"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [58.985403, 53.376066]
+		},
+		"properties": {
+			"title": "Магазин",
+			"icon": {
+				"iconUrl": "../img/icon/marker/shop.png",
+				"iconSize": [50, 50], 
+				"iconAnchor": [25, 25],
+				"popupAnchor": [0, -25],
+				"className": "marker"
+			},
+			"name": "products"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [58.987253, 53.376125]
+		},
+		"properties": {
+			"title": "Медицина",
+			"icon": {
+				"iconUrl": "../img/icon/marker/med.png",
+				"iconSize": [50, 50], 
+				"iconAnchor": [25, 25],
+				"popupAnchor": [0, -25],
+				"className": "marker"
+			},
+			"name": "med"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [58.986565, 53.376330]
+		},
+		"properties": {
+			"title": "Остановка",
+			"icon": {
+				"iconUrl": "../img/icon/marker/bus.png",
+				"iconSize": [50, 50], 
+				"iconAnchor": [25, 25],
+				"popupAnchor": [0, -25],
+				"className": "marker"
+			},
+			"name": "bus"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [58.987303, 53.377161]
+		},
+		"properties": {
+			"title": "Спорт",
+			"icon": {
+				"iconUrl": "../img/icon/marker/sport.png",
+				"iconSize": [50, 50], 
+				"iconAnchor": [25, 25],
+				"popupAnchor": [0, -25],
+				"className": "marker"
+			},
+			"name": "sport"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [58.986757, 53.375813]
+		},
+		"properties": {
+			"title": "ТЦ",
+			"icon": {
+				"iconUrl": "../img/icon/marker/shop.png",
+				"iconSize": [50, 50], 
+				"iconAnchor": [25, 25],
+				"popupAnchor": [0, -25],
+				"className": "marker"
+			},
+			"name": "market"
+		}
+	}
+  ]
+}

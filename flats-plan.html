@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="css/main.css"><script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+<script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+<!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="b-page">
+      <header class="header">
+        <div class="header__container b-container">
+          <div class="header__wrapper"><a class="logo" href="javascript:void(0);">
+              <div class="logo__img"><svg width="102" height="48" viewBox="0 0 102 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M34.0234 38H26.7969V21.6719H26.6406L20.293 37.668H15.8594L9.51172 21.6719H9.35547V38H2.12891V9.81641H11.6992L18.0078 26.2617H18.1641L24.4531 9.81641H34.0234V38ZM79.0039 18.4297C77.4023 18.5339 76.1198 19.0612 75.1562 20.0117C74.1667 20.9883 73.6719 22.2839 73.6719 23.8984C73.6719 25.513 74.1667 26.8151 75.1562 27.8047C76.1198 28.7552 77.4023 29.2826 79.0039 29.3867V18.4297ZM92.1875 23.918C92.1875 22.3034 91.6927 21.0013 90.7031 20.0117C89.7396 19.0612 88.457 18.5339 86.8555 18.4297V29.3867C88.457 29.2826 89.7396 28.7552 90.7031 27.8047C91.6927 26.8281 92.1875 25.5326 92.1875 23.918ZM78.8672 35.7148C74.7656 35.5586 71.5104 34.4714 69.1016 32.4531C66.6146 30.3568 65.3711 27.5052 65.3711 23.8984C65.3711 20.3177 66.6211 17.4727 69.1211 15.3633C71.5299 13.3451 74.7786 12.2578 78.8672 12.1016V9.03516H86.9922V12.1016C91.0938 12.2578 94.349 13.3451 96.7578 15.3633C99.2448 17.4596 100.488 20.3112 100.488 23.918C100.488 27.4987 99.2383 30.3438 96.7383 32.4531C94.3294 34.4714 91.0807 35.5586 86.9922 35.7148V38.7812H78.8672V35.7148Z" fill="#1E202C"/>
+<path d="M62.9883 28.7031C62.9883 31.5286 62.0247 33.7878 60.0977 35.4805C58.1836 37.1602 55.651 38 52.5 38H39.6289V9.81641H60.6055V16.3789H47.9102V19.7578H52.1289C55.3841 19.7578 58.0013 20.5651 59.9805 22.1797C61.9857 23.8203 62.9883 25.9948 62.9883 28.7031ZM50.4883 31.75C51.7643 31.75 52.7539 31.4896 53.457 30.9688C54.1862 30.4479 54.5508 29.6862 54.5508 28.6836C54.5508 26.6263 53.1771 25.5977 50.4297 25.5977H47.9102V31.75H50.4883Z" fill="#D8BB54"/>
+</svg>
+              </div>
+              <div class="logo__bloc">
+                <div class="logo__txt">От идеи </div>
+                <div class="logo__txt">до эксплуатации</div>
+              </div></a>
+            <div class="header__nav">
+              <div class="header__item header__item--menu">
+                <div class="header__link">
+                  <div>О компании</div><i> 
+                          <svg class="b-svg svg-arr_list ">
+                            <use xlink:href="svg/symbol/sprite.svg#arr_list"></use>
+                          </svg></i>
+                </div>
+                <div class="header__sub">
+                  <div class="header__box"><a class="header__ref header__ref--act" href="javascript:void(0);">Ссылка 1 не помню какая</a><a class="header__ref" href="javascript:void(0);">Ссылка 2</a><a class="header__ref" href="javascript:void(0);">Ссылка 3</a></div>
+                </div>
+              </div>
+              <div class="header__item">
+                <div class="header__link header__link--active"><a href="javascript:void(0);">Проекты</a></div>
+              </div>
+              <div class="header__item">
+                <div class="header__link"><a href="javascript:void(0);">Ход строительства</a></div>
+              </div>
+              <div class="header__item">
+                <div class="header__link"><a href="javascript:void(0);">Вторичное жилье</a></div>
+              </div>
+              <div class="header__item">
+                <div class="header__link"><a href="javascript:void(0);">Земельные участки</a></div>
+              </div>
+            </div>
+            <div class="header__phone">
+              <div class="header__link"><a class="b-header__tel" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a></div>
+            </div>
+            <div class="burger"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="overlay">
+          <div class="menu">
+            <div class="menu__inner">
+              <div class="menu__top"><a class="menu__logo" href="javascript:void(0);">
+                  <div class="logo__img logo__img--menu"><svg width="102" height="48" viewBox="0 0 102 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M34.0234 38H26.7969V21.6719H26.6406L20.293 37.668H15.8594L9.51172 21.6719H9.35547V38H2.12891V9.81641H11.6992L18.0078 26.2617H18.1641L24.4531 9.81641H34.0234V38ZM79.0039 18.4297C77.4023 18.5339 76.1198 19.0612 75.1562 20.0117C74.1667 20.9883 73.6719 22.2839 73.6719 23.8984C73.6719 25.513 74.1667 26.8151 75.1562 27.8047C76.1198 28.7552 77.4023 29.2826 79.0039 29.3867V18.4297ZM92.1875 23.918C92.1875 22.3034 91.6927 21.0013 90.7031 20.0117C89.7396 19.0612 88.457 18.5339 86.8555 18.4297V29.3867C88.457 29.2826 89.7396 28.7552 90.7031 27.8047C91.6927 26.8281 92.1875 25.5326 92.1875 23.918ZM78.8672 35.7148C74.7656 35.5586 71.5104 34.4714 69.1016 32.4531C66.6146 30.3568 65.3711 27.5052 65.3711 23.8984C65.3711 20.3177 66.6211 17.4727 69.1211 15.3633C71.5299 13.3451 74.7786 12.2578 78.8672 12.1016V9.03516H86.9922V12.1016C91.0938 12.2578 94.349 13.3451 96.7578 15.3633C99.2448 17.4596 100.488 20.3112 100.488 23.918C100.488 27.4987 99.2383 30.3438 96.7383 32.4531C94.3294 34.4714 91.0807 35.5586 86.9922 35.7148V38.7812H78.8672V35.7148Z" fill="#1E202C"/>
+<path d="M62.9883 28.7031C62.9883 31.5286 62.0247 33.7878 60.0977 35.4805C58.1836 37.1602 55.651 38 52.5 38H39.6289V9.81641H60.6055V16.3789H47.9102V19.7578H52.1289C55.3841 19.7578 58.0013 20.5651 59.9805 22.1797C61.9857 23.8203 62.9883 25.9948 62.9883 28.7031ZM50.4883 31.75C51.7643 31.75 52.7539 31.4896 53.457 30.9688C54.1862 30.4479 54.5508 29.6862 54.5508 28.6836C54.5508 26.6263 53.1771 25.5977 50.4297 25.5977H47.9102V31.75H50.4883Z" fill="#D8BB54"/>
+</svg>
+                  </div>
+                  <div class="menu__txt">От идеи до эксплуатации</div></a>
+                <div class="menu__close"></div>
+              </div>
+              <div class="menu__list">
+                <div class="menu__item menu__item--menu">
+                  <div class="menu__link">
+                    <div>О компании</div><i> 
+                            <svg class="b-svg svg-arr_list ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr_list"></use>
+                            </svg></i>
+                  </div>
+                  <div class="menu__sub"><a class="menu__ref menu__ref--active" href="javascript:void(0);">Ссылка 2</a><a class="menu__ref" href="javascript:void(0);">Ссылка 3</a></div>
+                </div>
+                <div class="menu__item">
+                  <div class="menu__link menu__link--active"><a href="javascript:void(0);">Проекты</a></div>
+                </div>
+                <div class="menu__item">
+                  <div class="header__link"><a href="javascript:void(0);">Ход строительства</a></div>
+                </div>
+                <div class="menu__item">
+                  <div class="menu__link"><a href="javascript:void(0);">Вторичное жилье</a></div>
+                </div>
+                <div class="menu__item">
+                  <div class="menu__link"><a href="javascript:void(0);">Земельные участк</a></div>
+                </div>
+                <div class="menu__item menu__item--phone">
+                  <div class="menu__link"><a class="b-header__tel" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a></div>
+                </div>
+              </div>
+              <div class="share-bloc share-bloc--header">
+                <div class="share-bloc__items"><a class="share-bloc__item" href="javascript:void(0);">
+                          <svg class="b-svg svg-vk ">
+                            <use xlink:href="svg/symbol/sprite.svg#vk"></use>
+                          </svg></a><a class="share-bloc__item" href="javascript:void(0);">
+                          <svg class="b-svg svg-inst ">
+                            <use xlink:href="svg/symbol/sprite.svg#inst"></use>
+                          </svg></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="flats-filter mf-margin">
+        <div class="flats-filter__container b-container">
+          <div class="flats-filter__title title-1">Квартиры Завенягина 1/2</div>
+          <div class="flats-filter__date">2 квартал 2021</div>
+          <div class="burger-filter"><span class="line"></span><span class="line"></span><span class="line"></span></div>
+          <form class="building-filter" method="get">
+            <div class="building-filter__row">
+              <div class="building-filter__col building-filter__col--project">
+                <div class="building-filter__header">Проект</div>
+                <div class="building-filter__box">
+                  <div class="building-filter__case">
+                    <div class="building-filter__wrp">
+                      <div class="building-filter__text">Все</div>
+                      <div class="building-filter__img"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#1E202C" stroke-width="1.5"/>
+</svg>
+                      </div>
+                    </div>
+                    <div class="building-filter__select">
+                      <div class="building-filter__unit"><input id="type1" type="radio" name="type" value="Завенягина 1/2" checked>
+<label for="type1" title="Завенягина 1">Завенягина 1/2</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="type2" type="radio" name="type" value="улица имени Газеты Правда, 79">
+<label for="type2" title="улица имени Газеты Правда, 79">улица имени Газеты Правда, 79</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="type3" type="radio" name="type" value="Завенягина 1/2" checked>
+<label for="type3" title="Завенягина 1">Завенягина 1/2</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="type4" type="radio" name="type" value="улица имени Газеты Правда, 79">
+<label for="type4" title="улица имени Газеты Правда, 79">улица имени Газеты Правда, 79</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="building-filter__col building-filter__col--room">
+                <div class="building-filter__header">Кол-во комнат</div>
+                <div class="building-filter__box">
+                  <div class="building-filter__list">
+                    <div class="building-filter__radio"><input id="room1" type="radio" name="room" value="C" checked>
+<label for="room1">C</label>
+                    </div>
+                    <div class="building-filter__radio"><input id="room2" type="radio" name="room" value="1">
+<label for="room2">1</label>
+                    </div>
+                    <div class="building-filter__radio"><input id="room3" type="radio" name="room" value="2">
+<label for="room3">2</label>
+                    </div>
+                    <div class="building-filter__radio"><input id="room4" type="radio" name="room" value="3+">
+<label for="room4">3+</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="building-filter__col building-filter__col--period">
+                <div class="building-filter__header">Срок сдачи</div>
+                <div class="building-filter__box">
+                  <div class="building-filter__case">
+                    <div class="building-filter__wrp">
+                      <div class="building-filter__text">Срок сдачи</div>
+                      <div class="building-filter__img"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#1E202C" stroke-width="1.5"/>
+</svg>
+                      </div>
+                    </div>
+                    <div class="building-filter__select">
+                      <div class="building-filter__unit"><input id="period1" type="radio" name="period" value="2020" checked>
+<label for="period1" type="radio" title="2020">2020</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="period2" type="radio" name="period" value="2019">
+<label for="period2" title="2019">2019</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="period3" type="radio" name="period" value="2018">
+<label for="period3" title="2018">2018</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="period4" type="radio" name="period" value="2017">
+<label for="period4" title="2017">2017</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="building-filter__col building-filter__col--offer">
+                <div class="building-filter__header">Спецпредложения</div>
+                <div class="building-filter__box">
+                  <div class="building-filter__case">
+                    <div class="building-filter__wrp">
+                      <div class="building-filter__text">Спецпредложения</div>
+                      <div class="building-filter__img"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#1E202C" stroke-width="1.5"/>
+</svg>
+                      </div>
+                    </div>
+                    <div class="building-filter__select">
+                      <div class="building-filter__unit"><input id="offer1" type="radio" name="offer" value="Все" checked>
+<label for="offer1">Все</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="offer2" type="radio" name="offer" value="Старт продаж">
+<label for="offer2">Старт продаж</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="offer3" type="radio" name="offer" value="Строительство">
+<label for="offer3">Строительство</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="offer4" type="radio" name="offer" value="Завершенные">
+<label for="offer4">Завершенные</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="building-filter__col building-filter__col--cost">
+                <div class="building-filter__header">Стоимость</div>
+                <div class="building-filter__range" data-min="1500000" data-max="13500000">
+                  <div class="building-filter__up"></div>
+                  <div class="building-filter__low"></div>
+                </div>
+                <div id="cost"></div><input type="hidden" name="send-cost" id="send-result-сost" />
+              </div>
+            </div>
+            <div class="building-filter__row">
+              <div class="building-filter__col building-filter__col--cost">
+                <div class="building-filter__header">Площадь</div>
+                <div class="building-filter__range" data-min="0" data-max="100">
+                  <div class="building-filter__up"></div>
+                  <div class="building-filter__low"></div>
+                </div>
+                <div id="area"></div><input type="hidden" name="send-area" id="send-result-area" />
+              </div>
+              <div class="building-filter__col building-filter__col--area">
+                <div class="building-filter__header">Особенности планировки</div>
+                <div class="building-filter__box">
+                  <div class="building-filter__case">
+                    <div class="building-filter__wrp">
+                      <div class="building-filter__text">Особенности планировки</div>
+                      <div class="building-filter__img"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#1E202C" stroke-width="1.5"/>
+</svg>
+                      </div>
+                    </div>
+                    <div class="building-filter__select">
+                      <div class="building-filter__unit"><input id="area1" type="radio" name="area" value="Все" checked>
+<label for="area1">Все</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="area2" type="radio" name="area" value="Старт продаж">
+<label for="area2">Старт продаж</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="area3" type="radio" name="area" value="Строительство">
+<label for="area3">Строительство</label>
+                      </div>
+                      <div class="building-filter__unit"><input id="area4" type="radio" name="area"  value="Завершенные">
+<label for="area4">Завершенные</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="building-filter__button">
+                <div class="building-filter__txt">Свободно <span>55</span> квартир</div>
+                <button class="btn btn--decor">
+                  <div class="btn__cover">
+                    <div class="btn__button">
+                      <div class="btn__line">
+                              <svg class="b-svg svg-arr ">
+                                <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                              </svg>
+                      </div>
+                      <div class="btn__figure">
+                              <svg class="b-svg svg-figure ">
+                                <use xlink:href="svg/symbol/sprite.svg#figure"></use>
+                              </svg>
+                        <div class="btn__decor">
+                                <svg class="b-svg svg-arr ">
+                                  <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                                </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn__button btn__button--laptop">
+                       <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    </div>
+                  </div>
+                  <div class="btn__txt">подробнее</div>
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="filter-sort">
+            <div class="filter-sort__box">
+              <div class="filter-sort__case">
+                <div class="filter-sort__wrp">
+                  <div class="filter-sort__text">Сортировка</div>
+                  <div class="filter-sort__img"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#1E202C" stroke-width="1.5"/>
+</svg>
+                  </div>
+                </div>
+                <div class="filter-sort__select">
+                  <div class="filter-sort__unit"><input id="sorts1" type="radio" name="sorts" value="pay-min" checked>
+<label for="sorts1" title="Цена (минимальная)">Цена (минимальная)</label>
+                  </div>
+                  <div class="filter-sort__unit"><input id="sorts2" type="radio" name="sorts" value="pay-max" checked>
+<label for="sorts2" title="Цена (максимальная)">Цена (максимальная)</label>
+                  </div>
+                  <div class="filter-sort__unit"><input id="sorts3" type="radio" name="sorts" value="area-min" checked>
+<label for="sorts3" title="Площадь (минимальная)">Площадь (минимальная)</label>
+                  </div>
+                  <div class="filter-sort__unit"><input id="sorts4" type="radio" name="sorts" value="area-max" checked>
+<label for="sorts4" title="Площадь (максимальная)">Площадь (максимальная)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flats-basic">
+        <div class="flats-basic__container b-container">
+          <div class="flats-basic__menu"><nav class="filter-menu nav-wrap">
+<ul class="group" id="example-one">
+<li class="current_page_item">
+<a class="filter-menu__link ">
+<input id="view1" type="radio" name="radio" value="1" checked>
+<label for="view1">Планировка</label>
+</a>
+</li>
+<li>
+<a class="filter-menu__link ">
+<input id="view2" type="radio" name="radio" value="2">
+<label for="view2">Плитка</label>
+</a>
+</li>
+<li>
+<a class="filter-menu__link ">
+<input id="view3" type="radio" name="radio" value="3">
+<label for="view3">Этажи</label>
+</a>
+</li>							
+</ul>
+</nav>
+            <form class="flats-basic__filter" method="get">
+              <div class="flats-basic__word">Сортировать по</div>
+              <div class="flats-basic__group">
+                <div class="flats-basic__module">
+                  <div class="flats-basic__text">Цене</div>
+                  <div class="flats-basic__switch">
+                    <div class="flats-basic__sort"><input id="sort1" type="radio" name="sort1" value="1">
+<label for="sort1">
+                            <svg class="b-svg svg-arr_list ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr_list"></use>
+                            </svg></label>
+                    </div>
+                    <div class="flats-basic__sort"><input id="sort2" type="radio" name="sort1" value="2">
+<label for="sort2">
+                            <svg class="b-svg svg-arr_list ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr_list"></use>
+                            </svg></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="flats-basic__module">
+                  <div class="flats-basic__text">Площади</div>
+                  <div class="flats-basic__switch">
+                    <div class="flats-basic__sort"><input id="sort3" type="radio" name="sort2" value="3">
+<label for="sort3">
+                            <svg class="b-svg svg-arr_list ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr_list"></use>
+                            </svg></label>
+                    </div>
+                    <div class="flats-basic__sort"><input id="sort4" type="radio" name="sort2" value="4">
+<label for="sort4">
+                            <svg class="b-svg svg-arr_list ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr_list"></use>
+                            </svg></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="flats-basic__close" type="reset">
+                <div class="flats-basic__ic"> </div>
+                <div class="flats-basic__text">Сбросить фильтр</div>
+              </button>
+            </form>
+          </div>
+          <div class="flats-basic__box">
+            <div class="flats-basic__items">
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="flats-basic__item">
+                <div class="flats-basic__plan">
+                  <div class="flats-basic__qty"><span>4<span> квартиры</div>
+                  <div class="flats-basic__inner">
+                    <div class="flats-basic__img"><img src="./img/flats/plan/plan.png" alt=""></div>
+                  </div>
+                </div>
+                <div class="flats-basic__cover">
+                  <div class="flats-basic__info">1 комнатная квартира 23,0м <sup><small>2</small></sup></div>
+                  <div class="flats-basic__price">от <span>1 250 000</span> руб.</div>
+                  <div class="flats-basic__adres">Завенягина 123/2</div>
+                  <div class="flats-basic__bottom">
+                    <div class="flats-basic__bloc">
+                      <div class="flats-basic__txt">Срок сдачи:</div>
+                      <div class="flats-basic__period">1 квартал 2021</div>
+                    </div><a class="flats-basic__link" href="javascript:void(0);"> 
+                      <div class="flats-basic__decor"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13.5C7.52298 6.83333 16.477 6.83333 22 13.5" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class = "fill" d="M15.682 9.81802C17.4393 11.5754 17.4393 14.4246 15.682 16.182C13.9246 17.9393 11.0754 17.9393 9.31802 16.182C7.56066 14.4246 7.56066 11.5754 9.31802 9.81802C11.0754 8.06066 13.9246 8.06066 15.682 9.81802" stroke="#D8BB54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="flats-basic__char">Подробнее</div></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer"><a id="btnUp">
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.749996" y="-0.747675" width="41.9004" height="41.9004" transform="matrix(-4.37114e-08 -1 0.999995 0.00310011 1.49767 43.405)" fill="#D8BB54" stroke="#D8BB54" stroke-width="1.5"/>
+<mask id="path-2-outside-1" maskUnits="userSpaceOnUse" x="8.2002" y="9.31372" width="27" height="25" fill="black">
+<rect fill="white" x="8.2002" y="9.31372" width="27" height="25"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.6516 23.354C33.9517 23.3534 34.1946 23.1097 34.194 22.8096C34.194 22.6658 34.1369 22.5279 34.0353 22.426L22.0821 10.4728C21.8699 10.2607 21.526 10.2607 21.3138 10.4728L9.36051 22.4261C9.15717 22.6366 9.15717 22.9704 9.36051 23.181C9.569 23.3968 9.91298 23.4028 10.1288 23.1943L21.6974 11.6246L33.266 23.1943C33.3682 23.2968 33.507 23.3542 33.6516 23.354ZM33.6517 33.1337C33.9518 33.1332 34.1947 32.8895 34.1941 32.5894C34.1941 32.4451 34.1366 32.3067 34.0344 32.2047L22.0811 20.2515C21.8689 20.0394 21.525 20.0394 21.3128 20.2515L9.35954 32.2047C9.14708 32.4172 9.14708 32.7616 9.35954 32.9741C9.572 33.1866 9.91644 33.1866 10.1289 32.9741L21.6975 21.4044L33.2661 32.9741C33.3682 33.0765 33.5071 33.134 33.6517 33.1337Z"/>
+</mask>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.6516 23.354C33.9517 23.3534 34.1946 23.1097 34.194 22.8096C34.194 22.6658 34.1369 22.5279 34.0353 22.426L22.0821 10.4728C21.8699 10.2607 21.526 10.2607 21.3138 10.4728L9.36051 22.4261C9.15717 22.6366 9.15717 22.9704 9.36051 23.181C9.569 23.3968 9.91298 23.4028 10.1288 23.1943L21.6974 11.6246L33.266 23.1943C33.3682 23.2968 33.507 23.3542 33.6516 23.354ZM33.6517 33.1337C33.9518 33.1332 34.1947 32.8895 34.1941 32.5894C34.1941 32.4451 34.1366 32.3067 34.0344 32.2047L22.0811 20.2515C21.8689 20.0394 21.525 20.0394 21.3128 20.2515L9.35954 32.2047C9.14708 32.4172 9.14708 32.7616 9.35954 32.9741C9.572 33.1866 9.91644 33.1866 10.1289 32.9741L21.6975 21.4044L33.2661 32.9741C33.3682 33.0765 33.5071 33.134 33.6517 33.1337Z" fill="#1E202C"/>
+<path d="M34.194 22.8096H33.894L33.894 22.8102L34.194 22.8096ZM33.6516 23.354L33.6521 23.654L33.6522 23.654L33.6516 23.354ZM34.0353 22.426L34.2477 22.2141L34.2475 22.2139L34.0353 22.426ZM22.0821 10.4728L22.2942 10.2607L22.2942 10.2606L22.0821 10.4728ZM21.3138 10.4728L21.1017 10.2606L21.1017 10.2607L21.3138 10.4728ZM9.36051 22.4261L9.14835 22.2139L9.14473 22.2177L9.36051 22.4261ZM9.36051 23.181L9.14471 23.3894L9.14475 23.3894L9.36051 23.181ZM10.1288 23.1943L10.3373 23.4101L10.3409 23.4064L10.1288 23.1943ZM21.6974 11.6246L21.9095 11.4125L21.6974 11.2004L21.4852 11.4125L21.6974 11.6246ZM33.266 23.1943L33.4784 22.9825L33.4781 22.9822L33.266 23.1943ZM34.1941 32.5894H33.8941L33.8941 32.59L34.1941 32.5894ZM33.6517 33.1337L33.6522 33.4337L33.6523 33.4337L33.6517 33.1337ZM34.0344 32.2047L33.8222 32.4169L33.8225 32.4172L34.0344 32.2047ZM22.0811 20.2515L22.2932 20.0393L22.2932 20.0393L22.0811 20.2515ZM21.3128 20.2515L21.1007 20.0393L21.1007 20.0393L21.3128 20.2515ZM9.35954 32.2047L9.14741 31.9926L9.14741 31.9926L9.35954 32.2047ZM9.35954 32.9741L9.14741 33.1862L9.14741 33.1862L9.35954 32.9741ZM10.1289 32.9741L10.341 33.1862L10.341 33.1862L10.1289 32.9741ZM21.6975 21.4044L21.9096 21.1923L21.6975 20.9801L21.4853 21.1923L21.6975 21.4044ZM33.2661 32.9741L33.4785 32.7622L33.4782 32.762L33.2661 32.9741ZM33.894 22.8102C33.8942 22.9445 33.7855 23.0537 33.6511 23.054L33.6522 23.654C34.1179 23.6531 34.4949 23.2749 34.494 22.8091L33.894 22.8102ZM33.823 22.638C33.8685 22.6835 33.894 22.7453 33.894 22.8096H34.494C34.494 22.5863 34.4054 22.3722 34.2477 22.2141L33.823 22.638ZM21.87 10.6849L33.8232 22.6382L34.2475 22.2139L22.2942 10.2607L21.87 10.6849ZM21.5259 10.685C21.6209 10.59 21.7749 10.59 21.87 10.685L22.2942 10.2606C21.9648 9.93144 21.431 9.9314 21.1017 10.2606L21.5259 10.685ZM9.57265 22.6382L21.5259 10.6849L21.1017 10.2607L9.14838 22.214L9.57265 22.6382ZM9.57632 22.9726C9.48522 22.8782 9.48526 22.7288 9.57629 22.6345L9.14473 22.2177C8.82909 22.5445 8.82912 23.0626 9.14471 23.3894L9.57632 22.9726ZM9.92037 22.9786C9.82376 23.0719 9.6697 23.0692 9.57628 22.9725L9.14475 23.3894C9.4683 23.7243 10.0022 23.7337 10.3372 23.4101L9.92037 22.9786ZM21.4852 11.4125L9.91666 22.9822L10.3409 23.4064L21.9095 11.8368L21.4852 11.4125ZM33.4781 22.9822L21.9095 11.4125L21.4852 11.8368L33.0538 23.4064L33.4781 22.9822ZM33.6511 23.054C33.5863 23.0541 33.5241 23.0283 33.4784 22.9825L33.0536 23.4062C33.2122 23.5652 33.4276 23.6544 33.6521 23.654L33.6511 23.054ZM33.8941 32.59C33.8943 32.7243 33.7856 32.8335 33.6512 32.8337L33.6523 33.4337C34.118 33.4329 34.495 33.0547 34.4941 32.5889L33.8941 32.59ZM33.8225 32.4172C33.8684 32.4629 33.8941 32.5249 33.8941 32.5894H34.4941C34.4941 32.3653 34.4048 32.1504 34.2462 31.9923L33.8225 32.4172ZM21.869 20.4636L33.8222 32.4169L34.2465 31.9926L22.2932 20.0393L21.869 20.4636ZM21.5249 20.4636C21.6199 20.3686 21.774 20.3686 21.869 20.4636L22.2932 20.0393C21.9639 19.7101 21.43 19.7101 21.1007 20.0393L21.5249 20.4636ZM9.57167 32.4169L21.525 20.4636L21.1007 20.0393L9.14741 31.9926L9.57167 32.4169ZM9.57167 32.762C9.47637 32.6667 9.47637 32.5122 9.57167 32.4169L9.14741 31.9926C8.81779 32.3222 8.81779 32.8566 9.14741 33.1862L9.57167 32.762ZM9.91676 32.762C9.82146 32.8573 9.66697 32.8573 9.57167 32.762L9.14741 33.1862C9.47702 33.5159 10.0114 33.5159 10.341 33.1862L9.91676 32.762ZM21.4853 21.1923L9.91675 32.762L10.341 33.1862L21.9096 21.6165L21.4853 21.1923ZM33.4782 32.762L21.9096 21.1923L21.4853 21.6165L33.0539 33.1862L33.4782 32.762ZM33.6512 32.8337C33.5864 32.8339 33.5242 32.8081 33.4785 32.7622L33.0537 33.186C33.2123 33.3449 33.4277 33.4341 33.6522 33.4337L33.6512 32.8337Z" fill="#1E202C" mask="url(#path-2-outside-1)"/>
+</svg>
+</a>
+        <div class="footer__container b-container">
+          <div class="footer__top">
+            <div class="footer__data">
+              <div class="footer__info">
+                <div class="footer__bloc footer__bloc--logo"><a class="footer__logo" href="javascript:void(0);"><img src="./img/logo-footer.png" alt=""></a></div>
+                <div class="footer__bloc"> 
+                  <div class="share-bloc share-bloc--footer">
+                    <div class="share-bloc__items"><a class="share-bloc__soc" href="javascript:void(0);">
+                        <div class="share-bloc__item">
+                                <svg class="b-svg svg-vk ">
+                                  <use xlink:href="svg/symbol/sprite.svg#vk"></use>
+                                </svg>
+                        </div>
+                        <div class="share-bloc__txt">VKontakte</div></a><a class="share-bloc__soc" href="javascript:void(0);">
+                        <div class="share-bloc__item">
+                                <svg class="b-svg svg-inst ">
+                                  <use xlink:href="svg/symbol/sprite.svg#inst"></use>
+                                </svg>
+                        </div>
+                        <div class="share-bloc__txt">Instagram</div></a></div>
+                  </div>
+                </div>
+              </div><a class="footer__phone" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00 — Юридическая информация</a>
+            </div>
+            <div class="footer__box">
+              <div class="footer__items">
+                <div class="footer__unit"><a class="footer__link footer__link--active" href="javascript:void(0);">Контакты</a><a class="footer__link" href="javascript:void(0);">Компания</a></div>
+                <div class="footer__unit"><a class="footer__link" href="javascript:void(0);">Ипотека</a><a class="footer__link" href="javascript:void(0);">Обмен</a></div>
+                <div class="footer__unit"><a class="footer__link" href="javascript:void(0);">Новости</a><a class="footer__link" href="javascript:void(0);">Способы оплаты</a></div>
+                <div class="footer__unit"><a class="footer__link" href="javascript:void(0);">Проекты</a><a class="footer__link" href="javascript:void(0);">Земельные участки</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom"><a class="footer__ref" href="javascript:void(0);">Синай-Групп (с). 2020</a><a class="footer__ref footer__ref--phone" href="javascript:void(0);">+7 (900) 000-00-00 — Юридическая информация</a><a class="footer__ref" href="javascript:void(0);">Пользовательское соглашение</a><a class="footer__ref" href="javascript:void(0);"> Разработано Uralmedias</a></div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/libs-min.js"></script>
+    <script src="js/main-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Clamp.js/0.5.1/clamp.min.js"></script>
+    <script src="js/wNumb.min.js"></script>
+  </body>
+</html>
