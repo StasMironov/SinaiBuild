@@ -1070,17 +1070,14 @@ $(function () {
 
   if ($('.index__slider').exists()) {
     try {
-      // if (isSafari) {
-      //     $(window).on('resize load', function () {
-      //         let heigthSlider = 0;
-      //         $('.index__slider').children().each(function () {
-      //             heigthSlider += $(this).height();
-      //         });
-      //         console.log(heigthSlider);
-      //         $('.index__slider').height(heigthSlider);
-      //     }
-      //     )
-      // }
+      $(window).on('resize load', function () {
+        var heigthSlider = 0;
+        $('.index__slider').children().each(function () {
+          heigthSlider += $(this).height();
+        });
+        console.log(heigthSlider);
+        $('.index__slider').height(heigthSlider);
+      });
       var breakpoint = window.matchMedia('(min-width:641px)');
       var mySwiper;
 
