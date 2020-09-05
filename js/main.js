@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function ObjAd(element, place) {
     var adObj = $(element).html();
     var out = adObj;
-    document.querySelector(place).innerHTML = out;
-    console.log($(element));
+    document.querySelector(place).innerHTML = out; // console.log($(element))
+
     $(element).remove();
   }
 
@@ -223,6 +223,17 @@ $(function () {
     //console.log(monthPay);
     // console.log(sumLoan);
 
+  }
+
+  if ($('.index__slider').exists()) {
+    $(window).on('resize load', function () {
+      var heigthSlider = 0;
+      $('.index__slider').children().each(function () {
+        heigthSlider += $(this).height();
+      });
+      console.log(heigthSlider);
+      $('.index__slider').height(heigthSlider);
+    });
   }
 
   if ($('#btnUp').exists()) {
@@ -1097,7 +1108,7 @@ $(function () {
           grabCursor: true,
           effect: 'slide',
           slidesPerColumn: 3,
-          // autoHeight: true,
+          //autoHeight: true,
           pagination: {
             el: '.index__pag',
             clickable: true
@@ -1741,8 +1752,7 @@ $(function () {
   function createPag(block, swiperCont) {
     var bloc = document.querySelector(block);
     var qtySlide = swiperCont.slides.length;
-    var parentEl = bloc.querySelectorAll('.swiper-menu');
-    console.log(parentEl);
+    var parentEl = bloc.querySelectorAll('.swiper-menu'); //console.log(parentEl)
 
     if (qtySlide > 0) {
       for (var _i4 = 0; _i4 < parentEl.length; _i4++) {
