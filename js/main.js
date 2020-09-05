@@ -9,6 +9,8 @@ ScrollReveal({
   mobile: false
 });
 document.addEventListener("DOMContentLoaded", function (event) {
+  var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+
   if ($('.index-slider').exists()) {
     try {
       var projectContent = new Swiper('.index-slider', {
@@ -33,18 +35,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             spaceBetween: 10,
             touchRatio: 1
           },
-          600: {
-            autoplay: {
-              delay: 1000
-            }
-          },
           320: {
             slidesPerView: 1,
             spaceBetween: 10,
-            touchRatio: 1,
-            autoplay: {
-              delay: 1000
-            }
+            touchRatio: 1
           }
         }
       });
@@ -223,17 +217,6 @@ $(function () {
     //console.log(monthPay);
     // console.log(sumLoan);
 
-  }
-
-  if ($('.index__slider').exists()) {
-    $(window).on('resize load', function () {
-      var heigthSlider = 0;
-      $('.index__slider').children().each(function () {
-        heigthSlider += $(this).height();
-      });
-      console.log(heigthSlider);
-      $('.index__slider').height(heigthSlider);
-    });
   }
 
   if ($('#btnUp').exists()) {
@@ -1087,6 +1070,17 @@ $(function () {
 
   if ($('.index__slider').exists()) {
     try {
+      // if (isSafari) {
+      //     $(window).on('resize load', function () {
+      //         let heigthSlider = 0;
+      //         $('.index__slider').children().each(function () {
+      //             heigthSlider += $(this).height();
+      //         });
+      //         console.log(heigthSlider);
+      //         $('.index__slider').height(heigthSlider);
+      //     }
+      //     )
+      // }
       var breakpoint = window.matchMedia('(min-width:641px)');
       var mySwiper;
 
@@ -1095,9 +1089,12 @@ $(function () {
           if (mySwiper !== undefined) mySwiper.destroy(true, true);
           return;
         } else if (breakpoint.matches === false) {
+          console.log(mySwiper); // mySwiper.autoplay.start();
+
           return enableSwiper();
         }
-      };
+      }; //  breakpointChecker.autoplay.start();
+
 
       var enableSwiper = function enableSwiper() {
         mySwiper = new Swiper('.index__slider', {
@@ -1108,7 +1105,11 @@ $(function () {
           grabCursor: true,
           effect: 'slide',
           slidesPerColumn: 3,
-          //autoHeight: true,
+          autoHeight: true,
+          loop: true,
+          autoplay: {
+            delay: 5000
+          },
           pagination: {
             el: '.index__pag',
             clickable: true
