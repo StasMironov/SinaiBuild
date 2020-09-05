@@ -1070,6 +1070,14 @@ $(function () {
 
   if ($('.index__slider').exists()) {
     try {
+      var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+
+      if (isSafari) {
+        alert(1);
+      } else {
+        alert(0);
+      }
+
       $(window).on('resize load', function () {
         var heigthSlider = 0;
         $('.index__slider').children().each(function () {
