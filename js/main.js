@@ -5,6 +5,9 @@ jQuery.fn.exists = function () {
   return $(this).length;
 };
 
+ScrollReveal({
+  mobile: false
+});
 document.addEventListener("DOMContentLoaded", function (event) {
   if ($('.index-slider').exists()) {
     try {
