@@ -1097,7 +1097,7 @@ $(function () {
           grabCursor: true,
           effect: 'slide',
           slidesPerColumn: 3,
-          // autoHeight: true,
+          autoHeight: true,
           pagination: {
             el: '.index__pag',
             clickable: true
