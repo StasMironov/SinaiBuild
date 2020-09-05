@@ -1073,19 +1073,16 @@ $(function () {
       var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 
       if (isSafari) {
-        alert(1);
-      } else {
-        alert(0);
+        $(window).on('resize load', function () {
+          var heigthSlider = 0;
+          $('.index__slider').children().each(function () {
+            heigthSlider += $(this).height();
+          });
+          console.log(heigthSlider);
+          $('.index__slider').height(heigthSlider);
+        });
       }
 
-      $(window).on('resize load', function () {
-        var heigthSlider = 0;
-        $('.index__slider').children().each(function () {
-          heigthSlider += $(this).height();
-        });
-        console.log(heigthSlider);
-        $('.index__slider').height(heigthSlider);
-      });
       var breakpoint = window.matchMedia('(min-width:641px)');
       var mySwiper;
 
