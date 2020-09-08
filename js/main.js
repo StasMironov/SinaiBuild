@@ -898,6 +898,12 @@ $(function () {
     $('.burger-filter').on('click', function () {
       $(this).toggleClass('burger-filter--active');
       $('.building-filter').toggleClass('building-filter--active');
+
+      if ($(this).hasClass('burger-filter--active')) {
+        $('html').css('overflow', "hidden");
+      } else {
+        $('html').css('overflow', "auto");
+      }
     });
   }
 
